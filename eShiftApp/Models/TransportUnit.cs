@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace eShiftApp.Models
 {
-    internal class TransportUnit
+    public class TransportUnit
     {
+        public int UnitId { get; set; }
+        public string LorryNumber { get; set; }
+        public string DriverName { get; set; }
+        public string AssistantName { get; set; }
+        public float ContainerCapacity { get; set; }
+        public bool IsBooked { get; set; }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace eShiftApp.Models
 {
-    internal class Report
+    public class Report
     {
+        public int ReportId { get; set; }
+        public int AdminId { get; set; }
+        public string ReportType { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string Description { get; set; }
     }
 }

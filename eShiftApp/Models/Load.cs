@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace eShiftApp.Models
 {
-    internal class Load
+    public class Load
     {
+        public int LoadId { get; set; }
+        public int JobId { get; set; }
+        public int ProductId { get; set; }
+        public float Weight { get; set; }
+        public float Volume { get; set; }
     }
 }
