@@ -73,6 +73,80 @@ namespace eShiftApp.Controllers
             return DBHelper.ExecuteQuery(query, parameters);
         }
 
+        // Mark job as Completed after the Job done and free the tranceport unit
+        public int MarkJobAsCompleted(int jobId)
+        {
+            // Step 1: Get the assigned unit_id for this job
+            string selectQuery = "SELECT unit_id FROM TransportJob WHERE job_id = @JobId";
+            SqlParameter[] selectParams = {
+                new SqlParameter("@JobId", jobId)
+            };
+
+            object unitIdObj = DBHelper.ExecuteScalar(selectQuery, selectParams);
+
+            if (unitIdObj == null || unitIdObj == DBNull.Value)
+            {
+                // No unit assigned or job not found
+                return 0;
+            }
+
+            int unitId = Convert.ToInt32(unitIdObj);
+
+            // Step 2: Update job status to Completed
+            string updateJobQuery = "UPDATE TransportJob SET status = 'Completed' WHERE job_id = @JobId";
+            int jobUpdateResult = DBHelper.ExecuteQuery(updateJobQuery, selectParams);
+
+            // Step 3: Set is_booked = false for the transport unit
+            string updateUnitQuery = "UPDATE TransportUnit SET is_booked = 0 WHERE unit_id = @UnitId";
+            SqlParameter[] unitParams = {
+                new SqlParameter("@UnitId", unitId)
+            };
+            int unitUpdateResult = DBHelper.ExecuteQuery(updateUnitQuery, unitParams);
+
+            // Return combined result (optional)
+            return jobUpdateResult + unitUpdateResult;
+        }
+
+        // Count of jobs by status (Pending / Approved / Declined)
+        public int GetJobCountByStatus(int customerId, string status)
+        {
+            string query = "SELECT COUNT(*) FROM TransportJob WHERE customer_id = @CustomerId AND status = @Status";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@CustomerId", customerId),
+                new SqlParameter("@Status", status)
+            };
+
+            object result = DBHelper.ExecuteScalar(query, parameters);
+            return Convert.ToInt32(result);
+        }
+
+        // Count all jobs by customer
+        public int GetTotalJobCount(int customerId)
+        {
+            string query = "SELECT COUNT(*) FROM TransportJob WHERE customer_id = @CustomerId";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@CustomerId", customerId)
+            };
+
+            object result = DBHelper.ExecuteScalar(query, parameters);
+            return Convert.ToInt32(result);
+        }
+
+        //  Count jobs with status = Completed (if used in your DB)
+        public int GetCompletedJobCount(int customerId)
+        {
+            string query = "SELECT COUNT(*) FROM TransportJob WHERE customer_id = @CustomerId AND status = 'Completed'";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@CustomerId", customerId)
+            };
+
+            object result = DBHelper.ExecuteScalar(query, parameters);
+            return Convert.ToInt32(result);
+        }
+
         // Helper: Convert DataTable to List<TransportJob> // use this method as ORM
         private List<TransportJob> ParseJobList(DataTable dt)
         {
