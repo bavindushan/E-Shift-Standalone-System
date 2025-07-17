@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddNewRequest = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.progressCompletedJobs = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.progressApprovedJobs = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.progressTotalJobs = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.dataGridJobs = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridJobs)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -120,118 +111,21 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.progressCompletedJobs);
-            this.guna2Panel2.Controls.Add(this.progressApprovedJobs);
-            this.guna2Panel2.Controls.Add(this.progressTotalJobs);
             this.guna2Panel2.Location = new System.Drawing.Point(221, 12);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(768, 494);
             this.guna2Panel2.TabIndex = 1;
-            // 
-            // progressCompletedJobs
-            // 
-            this.progressCompletedJobs.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.progressCompletedJobs.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.progressCompletedJobs.ForeColor = System.Drawing.Color.White;
-            this.progressCompletedJobs.Location = new System.Drawing.Point(575, 13);
-            this.progressCompletedJobs.Minimum = 0;
-            this.progressCompletedJobs.Name = "progressCompletedJobs";
-            this.progressCompletedJobs.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.progressCompletedJobs.Size = new System.Drawing.Size(106, 106);
-            this.progressCompletedJobs.TabIndex = 2;
-            this.progressCompletedJobs.Text = "guna2CircleProgressBar3";
-            // 
-            // progressApprovedJobs
-            // 
-            this.progressApprovedJobs.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.progressApprovedJobs.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.progressApprovedJobs.ForeColor = System.Drawing.Color.White;
-            this.progressApprovedJobs.Location = new System.Drawing.Point(308, 13);
-            this.progressApprovedJobs.Minimum = 0;
-            this.progressApprovedJobs.Name = "progressApprovedJobs";
-            this.progressApprovedJobs.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.progressApprovedJobs.Size = new System.Drawing.Size(106, 106);
-            this.progressApprovedJobs.TabIndex = 1;
-            this.progressApprovedJobs.Text = "guna2CircleProgressBar2";
-            // 
-            // progressTotalJobs
-            // 
-            this.progressTotalJobs.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.progressTotalJobs.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.progressTotalJobs.ForeColor = System.Drawing.Color.White;
-            this.progressTotalJobs.Location = new System.Drawing.Point(63, 14);
-            this.progressTotalJobs.Minimum = 0;
-            this.progressTotalJobs.Name = "progressTotalJobs";
-            this.progressTotalJobs.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.progressTotalJobs.Size = new System.Drawing.Size(106, 106);
-            this.progressTotalJobs.TabIndex = 0;
-            this.progressTotalJobs.Text = "Total Jobs";
-            // 
-            // dataGridJobs
-            // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dataGridJobs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridJobs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridJobs.ColumnHeadersHeight = 4;
-            this.dataGridJobs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridJobs.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridJobs.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridJobs.Location = new System.Drawing.Point(222, 171);
-            this.dataGridJobs.Name = "dataGridJobs";
-            this.dataGridJobs.RowHeadersVisible = false;
-            this.dataGridJobs.RowHeadersWidth = 62;
-            this.dataGridJobs.RowTemplate.Height = 28;
-            this.dataGridJobs.Size = new System.Drawing.Size(768, 330);
-            this.dataGridJobs.TabIndex = 2;
-            this.dataGridJobs.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridJobs.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataGridJobs.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataGridJobs.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataGridJobs.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridJobs.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridJobs.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridJobs.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataGridJobs.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridJobs.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridJobs.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridJobs.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGridJobs.ThemeStyle.HeaderStyle.Height = 4;
-            this.dataGridJobs.ThemeStyle.ReadOnly = false;
-            this.dataGridJobs.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridJobs.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridJobs.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridJobs.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridJobs.ThemeStyle.RowsStyle.Height = 28;
-            this.dataGridJobs.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridJobs.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // CustomerDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 516);
-            this.Controls.Add(this.dataGridJobs);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "CustomerDashboardForm";
             this.Text = "CustomerDashboardForm";
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridJobs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,9 +138,5 @@
         private Guna.UI2.WinForms.Guna2Button btnAddNewRequest;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar progressTotalJobs;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar progressCompletedJobs;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar progressApprovedJobs;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridJobs;
     }
 }

@@ -92,11 +92,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\DBHelper.cs" />
     <Compile Include="Utils\PasswordHasher.cs" />
-    <Compile Include="Views\Customer\AddJobForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Views\Customer\AddJobControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Customer\AddJobForm.Designer.cs">
-      <DependentUpon>AddJobForm.cs</DependentUpon>
+    <Compile Include="Views\Customer\AddJobControl.Designer.cs">
+      <DependentUpon>AddJobControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerDashboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerDashboardControl.Designer.cs">
+      <DependentUpon>CustomerDashboardControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Customer\CustomerDashboardForm.cs">
       <SubType>Form</SubType>
@@ -119,8 +125,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Customer\AddJobForm.resx">
-      <DependentUpon>AddJobForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Customer\AddJobControl.resx">
+      <DependentUpon>AddJobControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\CustomerDashboardControl.resx">
+      <DependentUpon>CustomerDashboardControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Customer\CustomerDashboardForm.resx">
       <DependentUpon>CustomerDashboardForm.cs</DependentUpon>

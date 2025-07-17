@@ -38,6 +38,20 @@ namespace eShiftApp.Controllers
             return ParseJobList(dt);
         }
 
+        // Get Last Inserted Job ID
+        public int GetLastInsertedJobId()
+        {
+            string query = "SELECT TOP 1 job_id FROM TransportJob ORDER BY job_id DESC";
+
+            DataTable dt = DBHelper.ExecuteSelect(query);
+            if (dt.Rows.Count == 1)
+            {
+                return Convert.ToInt32(dt.Rows[0]["job_id"]);
+            }
+
+            return -1;
+        }
+
         // Admin: Get all jobs
         public List<TransportJob> GetAllJobs()
         {

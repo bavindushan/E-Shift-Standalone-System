@@ -15,6 +15,6 @@ namespace eShiftApp.Models
         public string Status { get; set; } // Pending, Approved, Declined
         public DateTime RequestDate { get; set; }
         public DateTime? ApprovalDate { get; set; }
-        public int UnitId { get; set; }
+        public int? UnitId { get; set; }
     }
 }
