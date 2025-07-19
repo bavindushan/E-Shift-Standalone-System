@@ -37,12 +37,14 @@
             this.btnManageCustomers = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.btnSettings);
             this.guna2Panel1.Controls.Add(this.btnSystemMonitoring);
             this.guna2Panel1.Controls.Add(this.btnViewJobRecords);
@@ -64,7 +66,7 @@
             this.btnSettings.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Location = new System.Drawing.Point(14, 444);
+            this.btnSettings.Location = new System.Drawing.Point(14, 473);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(195, 56);
             this.btnSettings.TabIndex = 6;
@@ -79,7 +81,7 @@
             this.btnSystemMonitoring.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnSystemMonitoring.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSystemMonitoring.ForeColor = System.Drawing.Color.White;
-            this.btnSystemMonitoring.Location = new System.Drawing.Point(14, 362);
+            this.btnSystemMonitoring.Location = new System.Drawing.Point(14, 397);
             this.btnSystemMonitoring.Name = "btnSystemMonitoring";
             this.btnSystemMonitoring.Size = new System.Drawing.Size(195, 56);
             this.btnSystemMonitoring.TabIndex = 5;
@@ -94,11 +96,12 @@
             this.btnViewJobRecords.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnViewJobRecords.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnViewJobRecords.ForeColor = System.Drawing.Color.White;
-            this.btnViewJobRecords.Location = new System.Drawing.Point(14, 275);
+            this.btnViewJobRecords.Location = new System.Drawing.Point(14, 321);
             this.btnViewJobRecords.Name = "btnViewJobRecords";
             this.btnViewJobRecords.Size = new System.Drawing.Size(195, 56);
             this.btnViewJobRecords.TabIndex = 4;
             this.btnViewJobRecords.Text = "View Job Records";
+            this.btnViewJobRecords.Click += new System.EventHandler(this.btnViewJobRecords_Click);
             // 
             // btnLogout
             // 
@@ -124,9 +127,9 @@
             this.btnManageTransportUnits.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnManageTransportUnits.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnManageTransportUnits.ForeColor = System.Drawing.Color.White;
-            this.btnManageTransportUnits.Location = new System.Drawing.Point(13, 192);
+            this.btnManageTransportUnits.Location = new System.Drawing.Point(13, 167);
             this.btnManageTransportUnits.Name = "btnManageTransportUnits";
-            this.btnManageTransportUnits.Size = new System.Drawing.Size(195, 56);
+            this.btnManageTransportUnits.Size = new System.Drawing.Size(195, 57);
             this.btnManageTransportUnits.TabIndex = 2;
             this.btnManageTransportUnits.Text = "Manage Transport Units";
             this.btnManageTransportUnits.Click += new System.EventHandler(this.btnManageTransportUnits_Click);
@@ -140,7 +143,7 @@
             this.btnManageCustomers.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnManageCustomers.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnManageCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnManageCustomers.Location = new System.Drawing.Point(13, 107);
+            this.btnManageCustomers.Location = new System.Drawing.Point(13, 90);
             this.btnManageCustomers.Name = "btnManageCustomers";
             this.btnManageCustomers.Size = new System.Drawing.Size(195, 57);
             this.btnManageCustomers.TabIndex = 1;
@@ -156,7 +159,7 @@
             this.btnDashboard.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Location = new System.Drawing.Point(12, 28);
+            this.btnDashboard.Location = new System.Drawing.Point(12, 12);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(195, 58);
             this.btnDashboard.TabIndex = 0;
@@ -170,11 +173,26 @@
             this.guna2Panel2.Size = new System.Drawing.Size(887, 601);
             this.guna2Panel2.TabIndex = 3;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.RoyalBlue;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(14, 244);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(195, 57);
+            this.guna2Button1.TabIndex = 7;
+            this.guna2Button1.Text = "Manage Products";
+            // 
             // AdminDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 613);
+            this.ClientSize = new System.Drawing.Size(1129, 614);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Name = "AdminDashboardForm";
@@ -195,5 +213,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSettings;
         private Guna.UI2.WinForms.Guna2Button btnSystemMonitoring;
         private Guna.UI2.WinForms.Guna2Button btnViewJobRecords;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

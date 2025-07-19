@@ -123,6 +123,12 @@
     <Compile Include="Views\Admin\ManageTransportUnitControl.Designer.cs">
       <DependentUpon>ManageTransportUnitControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\ViewJobRecordsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\ViewJobRecordsControl.Designer.cs">
+      <DependentUpon>ViewJobRecordsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Customer\AddJobControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\ManageTransportUnitControl.resx">
       <DependentUpon>ManageTransportUnitControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\ViewJobRecordsControl.resx">
+      <DependentUpon>ViewJobRecordsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Customer\AddJobControl.resx">
       <DependentUpon>AddJobControl.cs</DependentUpon>

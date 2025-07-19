@@ -9,6 +9,8 @@ namespace eShiftApp.Controllers
 {
     public class TransportJobController
     {
+        private TransportUnitController _unitController = new TransportUnitController();
+
         // Add a new job by a customer
         public int AddJob(TransportJob job)
         {
@@ -96,38 +98,38 @@ namespace eShiftApp.Controllers
         }
 
         // Mark job as Completed after the Job done and free the tranceport unit
-        public int MarkJobAsCompleted(int jobId)
-        {
-            // Step 1: Get the assigned unit_id for this job
-            string selectQuery = "SELECT unit_id FROM TransportJob WHERE job_id = @JobId";
-            SqlParameter[] selectParams = {
-                new SqlParameter("@JobId", jobId)
-            };
+        //public int MarkJobAsCompleted(int jobId)
+        //{
+        //    // Step 1: Get the assigned unit_id for this job
+        //    string selectQuery = "SELECT unit_id FROM TransportJob WHERE job_id = @JobId";
+        //    SqlParameter[] selectParams = {
+        //        new SqlParameter("@JobId", jobId)
+        //    };
 
-            object unitIdObj = DBHelper.ExecuteScalar(selectQuery, selectParams);
+        //    object unitIdObj = DBHelper.ExecuteScalar(selectQuery, selectParams);
 
-            if (unitIdObj == null || unitIdObj == DBNull.Value)
-            {
-                // No unit assigned or job not found
-                return 0;
-            }
+        //    if (unitIdObj == null || unitIdObj == DBNull.Value)
+        //    {
+        //        // No unit assigned or job not found
+        //        return 0;
+        //    }
 
-            int unitId = Convert.ToInt32(unitIdObj);
+        //    int unitId = Convert.ToInt32(unitIdObj);
 
-            // Step 2: Update job status to Completed
-            string updateJobQuery = "UPDATE TransportJob SET status = 'Completed' WHERE job_id = @JobId";
-            int jobUpdateResult = DBHelper.ExecuteQuery(updateJobQuery, selectParams);
+        //    //  Update job status to Completed
+        //    string updateJobQuery = "UPDATE TransportJob SET status = 'Completed' WHERE job_id = @JobId";
+        //    int jobUpdateResult = DBHelper.ExecuteQuery(updateJobQuery, selectParams);
 
-            // Step 3: Set is_booked = false for the transport unit
-            string updateUnitQuery = "UPDATE TransportUnit SET is_booked = 0 WHERE unit_id = @UnitId";
-            SqlParameter[] unitParams = {
-                new SqlParameter("@UnitId", unitId)
-            };
-            int unitUpdateResult = DBHelper.ExecuteQuery(updateUnitQuery, unitParams);
+        //    //  Set is_booked = false for the transport unit
+        //    string updateUnitQuery = "UPDATE TransportUnit SET is_booked = 0 WHERE unit_id = @UnitId";
+        //    SqlParameter[] unitParams = {
+        //        new SqlParameter("@UnitId", unitId)
+        //    };
+        //    int unitUpdateResult = DBHelper.ExecuteQuery(updateUnitQuery, unitParams);
 
-            // Return combined result (optional)
-            return jobUpdateResult + unitUpdateResult;
-        }
+        //    // Return combined result (optional)
+        //    return jobUpdateResult + unitUpdateResult;
+        //}
 
         // Count of jobs by status (Pending / Approved / Declined)
         public int GetJobCountByStatus(int customerId, string status)
@@ -156,7 +158,7 @@ namespace eShiftApp.Controllers
             return Convert.ToInt32(result);
         }
 
-        //  Count jobs with status = Completed (if used in your DB)
+        //  Count jobs with status = Completed (if used in DB)
         public int GetCompletedJobCount(int customerId)
         {
             string query = "SELECT COUNT(*) FROM TransportJob WHERE customer_id = @CustomerId AND status = 'Completed'";
@@ -168,6 +170,57 @@ namespace eShiftApp.Controllers
             object result = DBHelper.ExecuteScalar(query, parameters);
             return Convert.ToInt32(result);
         }
+
+        // Get job by job ID
+        public DataTable GetJobById(int jobId)
+        {
+
+            Console.WriteLine("Job ID in controller stage" + jobId);
+            string query = "SELECT * FROM TransportJob WHERE job_id = @JobId";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@JobId", jobId)
+            };
+
+            return DBHelper.ExecuteSelect(query, parameters);
+        }
+
+        public bool MarkJobAsCompleted(int jobId)
+        {
+            //  Get the transport unit ID related to the job
+            string getUnitQuery = "SELECT unit_id FROM TransportJob WHERE job_id = @JobId";
+
+            SqlParameter[] getParams = {
+                new SqlParameter("@JobId", jobId)
+            };
+
+            DataTable result = DBHelper.ExecuteSelect(getUnitQuery, getParams);
+
+            if (result.Rows.Count == 0)
+                throw new Exception("Job not found.");
+
+            int unitId = Convert.ToInt32(result.Rows[0]["unit_id"]);
+
+            //  Mark job as Completed
+            string updateJobQuery = "UPDATE TransportJob SET status = 'Completed' WHERE job_id = @JobId";
+
+            SqlParameter[] updateParams = {
+                new SqlParameter("@JobId", jobId)
+            };
+
+            int affectedRows = DBHelper.ExecuteQuery(updateJobQuery, updateParams);
+
+            if (affectedRows > 0)
+            {
+                // Free the related transport unit
+                _unitController.UpdateBookingStatus(unitId, false);
+                return true; 
+            }
+
+            return false;
+        }
+
+
 
         // Helper: Convert DataTable to List<TransportJob> // use this method as ORM
         private List<TransportJob> ParseJobList(DataTable dt)

@@ -57,5 +57,15 @@ namespace eShiftApp.Views.Admin
 
             guna2Panel2.Controls.Add(manageTransportUitControl);
         }
+
+        private void btnViewJobRecords_Click(object sender, EventArgs e)
+        {
+            guna2Panel2.Controls.Clear();
+
+            var viewJobRecordsControl= new ViewJobRecordsControl(this);
+            viewJobRecordsControl.Dock = DockStyle.Fill;
+
+            guna2Panel2.Controls.Add(viewJobRecordsControl);
+        }
     }
 }
