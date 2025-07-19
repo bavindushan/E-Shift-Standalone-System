@@ -42,6 +42,13 @@
             this.btnChangePassword = new Guna.UI2.WinForms.Guna2Button();
             this.lblDetailsStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblPasswordStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -167,7 +174,7 @@
             // txtCurrentPassword
             // 
             this.txtCurrentPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCurrentPassword.DefaultText = "Current Password";
+            this.txtCurrentPassword.DefaultText = "";
             this.txtCurrentPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtCurrentPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCurrentPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -186,7 +193,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtConfirmPassword.DefaultText = "Confirm New Password";
+            this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtConfirmPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -205,7 +212,7 @@
             // txtNewPassword
             // 
             this.txtNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewPassword.DefaultText = "New Password";
+            this.txtNewPassword.DefaultText = "";
             this.txtNewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtNewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtNewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -242,7 +249,7 @@
             this.lblDetailsStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblDetailsStatus.Location = new System.Drawing.Point(79, 178);
             this.lblDetailsStatus.Name = "lblDetailsStatus";
-            this.lblDetailsStatus.Size = new System.Drawing.Size(0, 0);
+            this.lblDetailsStatus.Size = new System.Drawing.Size(3, 2);
             this.lblDetailsStatus.TabIndex = 12;
             this.lblDetailsStatus.Text = null;
             // 
@@ -251,15 +258,85 @@
             this.lblPasswordStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblPasswordStatus.Location = new System.Drawing.Point(227, 437);
             this.lblPasswordStatus.Name = "lblPasswordStatus";
-            this.lblPasswordStatus.Size = new System.Drawing.Size(0, 0);
+            this.lblPasswordStatus.Size = new System.Drawing.Size(3, 2);
             this.lblPasswordStatus.TabIndex = 13;
             this.lblPasswordStatus.Text = null;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(52, 409);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(136, 20);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Confirm New Psw:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(111, 364);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 20);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "New Psw:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(89, 319);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Current Psw:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(342, 144);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 20);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Address";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 144);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 20);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Phone:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(358, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 20);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Email:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 20);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Name:";
             // 
             // CustomerSettingsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lblPasswordStatus);
             this.Controls.Add(this.lblDetailsStatus);
             this.Controls.Add(this.btnChangePassword);
@@ -297,5 +374,12 @@
         private Guna.UI2.WinForms.Guna2Button btnChangePassword;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDetailsStatus;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPasswordStatus;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

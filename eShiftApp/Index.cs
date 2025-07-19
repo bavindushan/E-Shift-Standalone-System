@@ -1,4 +1,5 @@
-﻿using eShiftApp.Views.Customer;
+﻿using eShiftApp.Views.Admin;
+using eShiftApp.Views.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,9 +26,10 @@ namespace eShiftApp
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-            //AdminLoginForm adminForm = new AdminLoginForm();
-            //adminForm.Show();
-            //this.Hide();
+          
+            AdminLoginForm adminLoginForm = new AdminLoginForm();
+            adminLoginForm.Show();
+            this.Hide();
         }
 
         private void lblGoToSignUp_Click(object sender, EventArgs e)

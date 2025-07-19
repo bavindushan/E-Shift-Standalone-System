@@ -43,6 +43,8 @@ namespace eShiftApp.Views.Customer
                 lblMessage.Text = "Login successful!";
                 lblMessage.ForeColor = System.Drawing.Color.Green;
 
+                Console.WriteLine("not HAshed :" + password);
+
                 MessageBox.Show($"Welcome, {customer.Name}!", "e-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 var dashboard = new CustomerDashboardForm(customer);

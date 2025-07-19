@@ -92,6 +92,8 @@ namespace eShiftApp.Controllers
                 var row = dt.Rows[0];
                 string storedHash = row["password"].ToString();
 
+                Console.WriteLine("HAshed :"+storedHash);
+
                 if (PasswordHasher.Verify(password, storedHash))
                 {
                     return new Customer

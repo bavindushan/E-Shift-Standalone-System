@@ -24,6 +24,9 @@ namespace eShiftApp.Controllers
                 DataRow row = dt.Rows[0];
                 string storedHash = row["password"].ToString();
 
+                Console.WriteLine("Admin Hashed password :"+storedHash);
+                Console.WriteLine("Admin password :" + password);
+
                 if (PasswordHasher.Verify(password, storedHash))
                 {
                     return new Admin

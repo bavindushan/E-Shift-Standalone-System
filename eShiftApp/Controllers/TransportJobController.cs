@@ -60,6 +60,14 @@ namespace eShiftApp.Controllers
             return ParseJobList(dt);
         }
 
+        //Get all pendign jobs
+        public List<TransportJob> GetPendingJobs()
+        {
+            string query = "SELECT * FROM TransportJob WHERE status = 'Pending'";
+            DataTable dt = DBHelper.ExecuteSelect(query);
+            return ParseJobList(dt);
+        }
+
         // Admin: Update job status (Approve/Decline)
         public int UpdateJobStatus(int jobId, string status, DateTime? approvalDate)
         {

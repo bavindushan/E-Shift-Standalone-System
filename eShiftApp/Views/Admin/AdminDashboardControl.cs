@@ -9,54 +9,56 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using eShiftApp.Controllers;
 using eShiftApp.Models;
-using CustomerModel = eShiftApp.Models.Customer;
+using AdminModel = eShiftApp.Models.Admin;
 
-namespace eShiftApp.Views.Customer
+namespace eShiftApp.Views.Admin
 {
-    public partial class CustomerDashboardControl : UserControl
+    public partial class AdminDashboardControl : UserControl
     {
-
-        private readonly CustomerModel _currentCustomer;
         private readonly TransportJobController _jobController;
+        private readonly AdminModel _adminModel;
+        private readonly AdminDashboardForm _adminDashboardForm;
 
         private int _targetTotal = 0;
-        private int _targetApproved = 0;
+        private int _targetOngoing = 0;
         private int _targetCompleted = 0;
 
         private Timer timerTotal;
-        private Timer timerApproved;
+        private Timer timerOngoing;
         private Timer timerCompleted;
 
-        public CustomerDashboardControl(CustomerModel customer)
+        public AdminDashboardControl(AdminModel admin, AdminDashboardForm adminDashboardForm)
         {
             InitializeComponent();
-            _currentCustomer = customer;
             _jobController = new TransportJobController();
-            this.Load += CustomerDashboardControl_Load;
+            this.Load += AdminDashboardControl_Load;
+            _adminModel = admin;
+            _adminDashboardForm = adminDashboardForm;
         }
 
-        private void CustomerDashboardControl_Load(object sender, EventArgs e)
+        private void AdminDashboardControl_Load(object sender, EventArgs e)
         {
             timerTotal = new Timer { Interval = 20 };
             timerTotal.Tick += TimerTotal_Tick;
 
-            timerApproved = new Timer { Interval = 20 };
-            timerApproved.Tick += TimerApproved_Tick;
+            timerOngoing = new Timer { Interval = 20 };
+            timerOngoing.Tick += TimerOngoing_Tick;
 
             timerCompleted = new Timer { Interval = 20 };
             timerCompleted.Tick += TimerCompleted_Tick;
 
-            LoadJobStats();
+            LoadChartStats();
             LoadJobTable();
         }
 
-        public void LoadJobStats()
+        private void LoadChartStats()
         {
             try
             {
-                _targetTotal = _jobController.GetTotalJobCount(_currentCustomer.CustomerId);
-                _targetApproved = _jobController.GetJobCountByStatus(_currentCustomer.CustomerId, "Approved");
-                _targetCompleted = _jobController.GetJobCountByStatus(_currentCustomer.CustomerId, "Completed");
+                var allJobs = _jobController.GetAllJobs();
+                _targetTotal = allJobs.Count;
+                _targetOngoing = allJobs.Count(j => j.Status == "Ongoing");
+                _targetCompleted = allJobs.Count(j => j.Status == "Completed");
 
                 progressTotalJobs.Value = 0;
                 progressApprovedJobs.Value = 0;
@@ -67,12 +69,32 @@ namespace eShiftApp.Views.Customer
                 progressCompletedJobs.Text = "0";
 
                 timerTotal.Start();
-                timerApproved.Start();
+                timerOngoing.Start();
                 timerCompleted.Start();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading job stats: " + ex.Message);
+                MessageBox.Show("Error loading dashboard stats: " + ex.Message);
+            }
+        }
+
+        private void LoadJobTable()
+        {
+            try
+            {
+                var pendingJobs = _jobController.GetPendingJobs();
+                dgvJobs.AutoGenerateColumns = true;
+                dgvJobs.DataSource = pendingJobs;
+
+                dgvJobs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvJobs.ReadOnly = true;
+                dgvJobs.AllowUserToAddRows = false;
+                dgvJobs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvJobs.ColumnHeadersVisible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading pending jobs: " + ex.Message);
             }
         }
 
@@ -89,16 +111,16 @@ namespace eShiftApp.Views.Customer
             }
         }
 
-        private void TimerApproved_Tick(object sender, EventArgs e)
+        private void TimerOngoing_Tick(object sender, EventArgs e)
         {
-            if (progressApprovedJobs.Value < _targetApproved)
+            if (progressApprovedJobs.Value < _targetOngoing)
             {
                 progressApprovedJobs.Value += 2;
                 progressApprovedJobs.Text = progressApprovedJobs.Value.ToString();
             }
             else
             {
-                timerApproved.Stop();
+                timerOngoing.Stop();
             }
         }
 
@@ -114,27 +136,5 @@ namespace eShiftApp.Views.Customer
                 timerCompleted.Stop();
             }
         }
-
-        public void LoadJobTable()
-        {
-            try
-            {
-                var jobs = _jobController.GetJobsByCustomerId(_currentCustomer.CustomerId);
-                dataGridJobs.AutoGenerateColumns = true;
-                dataGridJobs.DataSource = jobs;
-
-                dataGridJobs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridJobs.ReadOnly = true;
-                dataGridJobs.AllowUserToAddRows = false;
-                dataGridJobs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                dataGridJobs.ColumnHeadersVisible = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading job list: " + ex.Message);
-            }
-        }
-
-        
     }
 }
