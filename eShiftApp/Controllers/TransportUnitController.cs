@@ -9,7 +9,7 @@ namespace eShiftApp.Controllers
 {
     public class TransportUnitController
     {
-        // Admin adds a new transport unit
+        // Add new transport unit
         public int AddTransportUnit(TransportUnit unit)
         {
             string query = "INSERT INTO TransportUnit (lorry_number, driver_name, assistant_name, container_capacity, is_booked) " +
@@ -24,6 +24,41 @@ namespace eShiftApp.Controllers
 
             return DBHelper.ExecuteQuery(query, parameters);
         }
+
+        // Update by unit_id
+        public int UpdateTransportUnit(TransportUnit unit)
+        {
+            string query = @"
+                UPDATE TransportUnit 
+                SET 
+                    lorry_number = @LorryNumber, 
+                    driver_name = @DriverName, 
+                    assistant_name = @AssistantName, 
+                    container_capacity = @ContainerCapacity
+                WHERE unit_id = @UnitId";
+
+                    SqlParameter[] parameters = {
+                new SqlParameter("@LorryNumber", unit.LorryNumber),
+                new SqlParameter("@DriverName", unit.DriverName),
+                new SqlParameter("@AssistantName", unit.AssistantName),
+                new SqlParameter("@ContainerCapacity", unit.ContainerCapacity),
+                new SqlParameter("@UnitId", unit.UnitId)
+            };
+
+            return DBHelper.ExecuteQuery(query, parameters);
+        }
+
+        public int DeleteTransportUnit(int unitId)
+        {
+            string query = "DELETE FROM TransportUnit WHERE unit_id = @UnitId";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@UnitId", unitId)
+            };
+
+            return DBHelper.ExecuteQuery(query, parameters);
+        }
+
 
         // Get all transport units
         public List<TransportUnit> GetAllUnits()
@@ -53,7 +88,22 @@ namespace eShiftApp.Controllers
             return DBHelper.ExecuteQuery(query, parameters);
         }
 
-        // Helper: Convert DataTable to List<TransportUnit>
+        public bool IsTransportUnitFree(int unitId)
+        {
+            string query = "SELECT COUNT(*) FROM Job WHERE unit_id = @UnitId AND job_status NOT IN ('Completed', 'Cancelled')";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@UnitId", unitId)
+            };
+
+            object result = DBHelper.ExecuteScalar(query, parameters);
+            int count = result != null ? Convert.ToInt32(result) : 0;
+
+            return count == 0; // Free if no active jobs
+        }
+
+
+        //  Convert DataTable to List<TransportUnit>
         private List<TransportUnit> ParseTransportUnitList(DataTable dt)
         {
             List<TransportUnit> units = new List<TransportUnit>();

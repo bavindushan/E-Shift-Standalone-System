@@ -47,5 +47,15 @@ namespace eShiftApp.Views.Admin
 
             guna2Panel2.Controls.Add(manageCustomerControl);
         }
+
+        private void btnManageTransportUnits_Click(object sender, EventArgs e)
+        {
+            guna2Panel2.Controls.Clear();
+
+            var manageTransportUitControl = new ManageTransportUnitControl(this);
+            manageTransportUitControl.Dock = DockStyle.Fill;
+
+            guna2Panel2.Controls.Add(manageTransportUitControl);
+        }
     }
 }

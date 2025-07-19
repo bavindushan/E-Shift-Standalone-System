@@ -129,6 +129,7 @@
             this.btnManageTransportUnits.Size = new System.Drawing.Size(195, 56);
             this.btnManageTransportUnits.TabIndex = 2;
             this.btnManageTransportUnits.Text = "Manage Transport Units";
+            this.btnManageTransportUnits.Click += new System.EventHandler(this.btnManageTransportUnits_Click);
             // 
             // btnManageCustomers
             // 
