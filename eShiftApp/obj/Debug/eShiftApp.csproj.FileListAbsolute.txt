@@ -32,3 +32,6 @@ C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assig
 C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Admin.ManageCustomerControl.resources
 C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Admin.ManageTransportUnitControl.resources
 C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Admin.ViewJobRecordsControl.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Admin.ManageProductControl.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Admin.SystemMonitoringControl.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Admin.AdminSettingsControl.resources

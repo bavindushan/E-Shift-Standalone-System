@@ -66,5 +66,31 @@ namespace eShiftApp.Controllers
 
             return DBHelper.ExecuteQuery(query, parameters);
         }
+
+        // Get product by ID
+        public Product GetProductById(int productId)
+        {
+            string query = "SELECT * FROM Product WHERE product_id = @ProductId";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@ProductId", productId)
+            };
+
+            DataTable dt = DBHelper.ExecuteSelect(query, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                return new Product
+                {
+                    ProductId = (int)row["product_id"],
+                    Name = row["name"].ToString(),
+                    Description = row["description"].ToString()
+                };
+            }
+
+            return null;
+        }
+
     }
 }

@@ -111,17 +111,35 @@
     <Compile Include="Views\Admin\AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\AdminSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminSettingsControl.Designer.cs">
+      <DependentUpon>AdminSettingsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\ManageCustomerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Admin\ManageCustomerControl.Designer.cs">
       <DependentUpon>ManageCustomerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\ManageProductControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\ManageProductControl.Designer.cs">
+      <DependentUpon>ManageProductControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\ManageTransportUnitControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Admin\ManageTransportUnitControl.Designer.cs">
       <DependentUpon>ManageTransportUnitControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\SystemMonitoringControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\SystemMonitoringControl.Designer.cs">
+      <DependentUpon>SystemMonitoringControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\ViewJobRecordsControl.cs">
       <SubType>UserControl</SubType>
@@ -186,11 +204,20 @@
     <EmbeddedResource Include="Views\Admin\AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\AdminSettingsControl.resx">
+      <DependentUpon>AdminSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\ManageCustomerControl.resx">
       <DependentUpon>ManageCustomerControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\ManageProductControl.resx">
+      <DependentUpon>ManageProductControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\ManageTransportUnitControl.resx">
       <DependentUpon>ManageTransportUnitControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\SystemMonitoringControl.resx">
+      <DependentUpon>SystemMonitoringControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\ViewJobRecordsControl.resx">
       <DependentUpon>ViewJobRecordsControl.cs</DependentUpon>

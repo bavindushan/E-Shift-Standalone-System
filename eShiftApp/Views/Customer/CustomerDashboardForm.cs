@@ -85,5 +85,10 @@ namespace eShiftApp.Views.Customer
         {
             LoadDashboardControl();
         }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

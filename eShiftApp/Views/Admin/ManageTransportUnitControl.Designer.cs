@@ -72,6 +72,7 @@
             this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 44;
             this.label5.Text = "Driver Name:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -81,6 +82,7 @@
             this.label4.Size = new System.Drawing.Size(108, 20);
             this.label4.TabIndex = 43;
             this.label4.Text = "Lorry Number:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -90,6 +92,7 @@
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 42;
             this.label3.Text = "Unit ID:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtUnitId
             // 
@@ -109,6 +112,7 @@
             this.txtUnitId.SelectedText = "";
             this.txtUnitId.Size = new System.Drawing.Size(231, 35);
             this.txtUnitId.TabIndex = 41;
+            this.txtUnitId.TextChanged += new System.EventHandler(this.txtUnitId_TextChanged);
             // 
             // btnAdd
             // 
@@ -184,6 +188,7 @@
             this.txtDriverName.SelectedText = "";
             this.txtDriverName.Size = new System.Drawing.Size(252, 35);
             this.txtDriverName.TabIndex = 37;
+            this.txtDriverName.TextChanged += new System.EventHandler(this.txtDriverName_TextChanged);
             // 
             // txtLorryNumber
             // 
@@ -203,6 +208,7 @@
             this.txtLorryNumber.SelectedText = "";
             this.txtLorryNumber.Size = new System.Drawing.Size(252, 35);
             this.txtLorryNumber.TabIndex = 36;
+            this.txtLorryNumber.TextChanged += new System.EventHandler(this.txtLorryNumber_TextChanged);
             // 
             // label1
             // 
@@ -213,6 +219,7 @@
             this.label1.Size = new System.Drawing.Size(427, 32);
             this.label1.TabIndex = 35;
             this.label1.Text = "Manage Transport Unit Details";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // chkIsBooked
             // 

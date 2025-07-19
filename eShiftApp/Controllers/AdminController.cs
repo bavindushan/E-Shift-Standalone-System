@@ -93,5 +93,18 @@ namespace eShiftApp.Controllers
 
             return DBHelper.ExecuteQuery(query, parameters);
         }
+
+        // Update admin username or password
+        public int UpdateAdminUserNameOrPass(Admin admin)
+        {
+            string query = "UPDATE Admin SET username = @Username WHERE admin_id = @AdminId";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@Username", admin.Username),
+                new SqlParameter("@AdminId", admin.AdminId)
+            };
+
+            return DBHelper.ExecuteQuery(query, parameters);
+        }
     }
 }

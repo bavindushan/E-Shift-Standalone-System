@@ -67,5 +67,41 @@ namespace eShiftApp.Views.Admin
 
             guna2Panel2.Controls.Add(viewJobRecordsControl);
         }
+
+        private void btnSystemMonitoring_Click(object sender, EventArgs e)
+        {
+            guna2Panel2.Controls.Clear();
+
+            var systemMonitoringControl = new SystemMonitoringControl();
+            systemMonitoringControl.Dock = DockStyle.Fill;
+
+            guna2Panel2.Controls.Add(systemMonitoringControl);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            // Manage products
+            guna2Panel2.Controls.Clear();
+
+            var manageProductControl =  new ManageProductControl();
+            manageProductControl.Dock = DockStyle.Fill;
+
+            guna2Panel2.Controls.Add(manageProductControl);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            guna2Panel2.Controls.Clear();
+
+            var adminSettingsControl = new AdminSettingsControl(_currentAdmin);
+            adminSettingsControl.Dock = DockStyle.Fill;
+
+            guna2Panel2.Controls.Add(adminSettingsControl);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
