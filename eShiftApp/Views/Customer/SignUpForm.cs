@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CustomerModel = eShiftApp.Models.Customer;
+using eShiftApp.Utils;
+
 
 namespace eShiftApp.Views.Customer
 {
@@ -22,6 +24,8 @@ namespace eShiftApp.Views.Customer
             _customerController = new CustomerController();
             txtPassword.UseSystemPasswordChar = true;
             txtConfirmPassword.UseSystemPasswordChar = true;
+
+            btnRegister.Click += btnRegister_Click;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -43,6 +47,23 @@ namespace eShiftApp.Views.Customer
                 return;
             }
 
+            //email format validation
+            if (!PhoneAndEmailValidator.IsValidEmail(email))
+            {
+                lblStatus.Text = "Please enter a valid email address.";
+                lblStatus.ForeColor = Color.Red;
+                return;
+            }
+
+            // Phone format validation
+            if (!PhoneAndEmailValidator.IsValidPhone(phone))
+            {
+                lblStatus.Text = "Please enter a valid phone number.";
+                lblStatus.ForeColor = Color.Red;
+                return;
+            }
+
+            // Cant Add same locations, It should be different
             if (password != confirmPassword)
             {
                 lblStatus.Text = "Passwords do not match.";
@@ -75,6 +96,11 @@ namespace eShiftApp.Views.Customer
             {
                 lblStatus.Text = "Registration successful. You can now log in.";
                 lblStatus.ForeColor = System.Drawing.Color.Green;
+
+                //rederect to login form
+                this.Hide();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
             }
             else
             {
@@ -85,6 +111,13 @@ namespace eShiftApp.Views.Customer
 
         // hyperlink to Login Form
         private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             LoginForm loginForm = new LoginForm();

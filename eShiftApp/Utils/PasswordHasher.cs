@@ -19,6 +19,7 @@ namespace eShiftApp.Utils
         // Verify input against hashed password
         public static bool Verify(string inputPassword, string storedHash)
         {
+            //Console.WriteLine("Input :"+ inputPassword +""+"Store :"+ storedHash);
             return BCrypt.Net.BCrypt.Verify(inputPassword, storedHash);
         }
     }

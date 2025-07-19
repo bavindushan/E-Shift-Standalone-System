@@ -74,7 +74,7 @@
             // txtName
             // 
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.DefaultText = "New Name";
+            this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -93,7 +93,7 @@
             // txtEmail
             // 
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "Email";
+            this.txtEmail.DefaultText = "";
             this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -113,7 +113,7 @@
             // txtAddress
             // 
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress.DefaultText = "New Address";
+            this.txtAddress.DefaultText = "";
             this.txtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -132,7 +132,7 @@
             // txtPhone
             // 
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhone.DefaultText = "New Phone Number";
+            this.txtPhone.DefaultText = "";
             this.txtPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -242,21 +242,24 @@
             this.lblDetailsStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblDetailsStatus.Location = new System.Drawing.Point(79, 178);
             this.lblDetailsStatus.Name = "lblDetailsStatus";
-            this.lblDetailsStatus.Size = new System.Drawing.Size(3, 2);
+            this.lblDetailsStatus.Size = new System.Drawing.Size(0, 0);
             this.lblDetailsStatus.TabIndex = 12;
+            this.lblDetailsStatus.Text = null;
             // 
             // lblPasswordStatus
             // 
             this.lblPasswordStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblPasswordStatus.Location = new System.Drawing.Point(227, 437);
             this.lblPasswordStatus.Name = "lblPasswordStatus";
-            this.lblPasswordStatus.Size = new System.Drawing.Size(3, 2);
+            this.lblPasswordStatus.Size = new System.Drawing.Size(0, 0);
             this.lblPasswordStatus.TabIndex = 13;
+            this.lblPasswordStatus.Text = null;
             // 
             // CustomerSettingsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblPasswordStatus);
             this.Controls.Add(this.lblDetailsStatus);
             this.Controls.Add(this.btnChangePassword);

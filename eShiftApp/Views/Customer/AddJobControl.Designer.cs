@@ -35,6 +35,7 @@
             this.btnSubmitRequest = new Guna.UI2.WinForms.Guna2Button();
             this.txtDeliveryLocation = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPickupLocation = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtVolume
@@ -48,12 +49,12 @@
             this.txtVolume.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtVolume.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtVolume.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtVolume.Location = new System.Drawing.Point(242, 277);
+            this.txtVolume.Location = new System.Drawing.Point(256, 408);
             this.txtVolume.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtVolume.Name = "txtVolume";
             this.txtVolume.PlaceholderText = "";
             this.txtVolume.SelectedText = "";
-            this.txtVolume.Size = new System.Drawing.Size(286, 41);
+            this.txtVolume.Size = new System.Drawing.Size(353, 41);
             this.txtVolume.TabIndex = 13;
             // 
             // txtWeight
@@ -67,12 +68,12 @@
             this.txtWeight.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtWeight.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtWeight.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtWeight.Location = new System.Drawing.Point(241, 226);
+            this.txtWeight.Location = new System.Drawing.Point(256, 341);
             this.txtWeight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.PlaceholderText = "";
             this.txtWeight.SelectedText = "";
-            this.txtWeight.Size = new System.Drawing.Size(286, 41);
+            this.txtWeight.Size = new System.Drawing.Size(352, 41);
             this.txtWeight.TabIndex = 12;
             // 
             // cmbProduct
@@ -85,15 +86,15 @@
             this.cmbProduct.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbProduct.ItemHeight = 30;
-            this.cmbProduct.Location = new System.Drawing.Point(242, 180);
+            this.cmbProduct.Location = new System.Drawing.Point(256, 275);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(285, 36);
+            this.cmbProduct.Size = new System.Drawing.Size(352, 36);
             this.cmbProduct.TabIndex = 11;
             // 
             // lblStatus
             // 
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Location = new System.Drawing.Point(249, 344);
+            this.lblStatus.Location = new System.Drawing.Point(266, 475);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(3, 2);
             this.lblStatus.TabIndex = 10;
@@ -108,7 +109,7 @@
             this.btnSubmitRequest.FillColor = System.Drawing.Color.Green;
             this.btnSubmitRequest.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSubmitRequest.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitRequest.Location = new System.Drawing.Point(347, 375);
+            this.btnSubmitRequest.Location = new System.Drawing.Point(428, 490);
             this.btnSubmitRequest.Name = "btnSubmitRequest";
             this.btnSubmitRequest.Size = new System.Drawing.Size(180, 45);
             this.btnSubmitRequest.TabIndex = 9;
@@ -125,12 +126,12 @@
             this.txtDeliveryLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDeliveryLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDeliveryLocation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDeliveryLocation.Location = new System.Drawing.Point(242, 126);
+            this.txtDeliveryLocation.Location = new System.Drawing.Point(256, 208);
             this.txtDeliveryLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDeliveryLocation.Name = "txtDeliveryLocation";
             this.txtDeliveryLocation.PlaceholderText = "";
             this.txtDeliveryLocation.SelectedText = "";
-            this.txtDeliveryLocation.Size = new System.Drawing.Size(286, 41);
+            this.txtDeliveryLocation.Size = new System.Drawing.Size(353, 41);
             this.txtDeliveryLocation.TabIndex = 8;
             // 
             // txtPickupLocation
@@ -144,18 +145,30 @@
             this.txtPickupLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPickupLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPickupLocation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPickupLocation.Location = new System.Drawing.Point(242, 75);
+            this.txtPickupLocation.Location = new System.Drawing.Point(256, 141);
             this.txtPickupLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPickupLocation.Name = "txtPickupLocation";
             this.txtPickupLocation.PlaceholderText = "";
             this.txtPickupLocation.SelectedText = "";
-            this.txtPickupLocation.Size = new System.Drawing.Size(286, 41);
+            this.txtPickupLocation.Size = new System.Drawing.Size(353, 41);
             this.txtPickupLocation.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.Location = new System.Drawing.Point(310, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 29);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Add New Job Here !";
             // 
             // AddJobControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtVolume);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.cmbProduct);
@@ -164,7 +177,7 @@
             this.Controls.Add(this.txtDeliveryLocation);
             this.Controls.Add(this.txtPickupLocation);
             this.Name = "AddJobControl";
-            this.Size = new System.Drawing.Size(768, 494);
+            this.Size = new System.Drawing.Size(887, 601);
             this.Load += new System.EventHandler(this.AddJobControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,5 +193,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSubmitRequest;
         private Guna.UI2.WinForms.Guna2TextBox txtDeliveryLocation;
         private Guna.UI2.WinForms.Guna2TextBox txtPickupLocation;
+        private System.Windows.Forms.Label label1;
     }
 }

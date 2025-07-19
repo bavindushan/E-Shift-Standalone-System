@@ -18,3 +18,11 @@ C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assig
 C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.csproj.Up2Date
 C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.exe
 C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.pdb
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\bin\Debug\Guna.UI2.dll
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Index.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Customer.AddJobControl.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Customer.CustomerDashboardControl.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Customer.CustomerDashboardForm.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Customer.CustomerSettingsControl.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Customer.LoginForm.resources
+C:\Users\Bavindu Shan\Documents\Top-Up(BEng. Hons Software Engineering)\AD\Assignments\CW-1\project\eShiftApp\eShiftApp\obj\Debug\eShiftApp.Views.Customer.SignUpForm.resources

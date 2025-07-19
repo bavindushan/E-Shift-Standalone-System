@@ -16,10 +16,13 @@ namespace eShiftApp.Views.Customer
         public AddJobControl(CustomerModel customer, CustomerDashboardForm dashboardForm)
         {
             InitializeComponent();
+
             _currentCustomer = customer;
             _dashboardForm = dashboardForm;
             _jobController = new TransportJobController();
-            this.Load += AddJobControl_Load; //  wire up the Load event
+
+            this.Load += AddJobControl_Load;
+            this.btnSubmitRequest.Click += btnSubmitRequest_Click;
         }
 
         private void AddJobControl_Load(object sender, EventArgs e)
@@ -42,6 +45,13 @@ namespace eShiftApp.Views.Customer
                 cmbProduct.SelectedIndex == -1 || string.IsNullOrWhiteSpace(weightText) || string.IsNullOrWhiteSpace(volumeText))
             {
                 lblStatus.Text = "Please fill in all fields.";
+                lblStatus.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            if(pickup == delivery)
+            {
+                lblStatus.Text = "Please insert different locations";
                 lblStatus.ForeColor = System.Drawing.Color.Red;
                 return;
             }

@@ -23,8 +23,15 @@ namespace eShiftApp.Views.Customer
         public CustomerSettingsControl(CustomerModel customer)
         {
             InitializeComponent();
+
             _currentCustomer = customer;
             _customerController = new CustomerController();
+
+            this.Load += CustomerSettingsControl_Load;
+
+            this.btnUpdateDetails.Click += btnUpdateDetails_Click;
+            this.btnChangePassword.Click += btnChangePassword_Click;
+
         }
 
         private void CustomerSettingsControl_Load(object sender, EventArgs e)
@@ -46,6 +53,13 @@ namespace eShiftApp.Views.Customer
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(phone) || string.IsNullOrWhiteSpace(address))
             {
                 lblDetailsStatus.Text = "Please fill all the fields.";
+                lblDetailsStatus.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            if (!PhoneAndEmailValidator.IsValidPhone(phone))
+            {
+                lblDetailsStatus.Text = "Please insert valid phone number.";
                 lblDetailsStatus.ForeColor = System.Drawing.Color.Red;
                 return;
             }

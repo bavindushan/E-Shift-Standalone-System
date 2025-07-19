@@ -18,6 +18,8 @@ namespace eShiftApp
             InitializeComponent();
             lblGoToSignUp.Cursor = Cursors.Hand;
             lblGoToSignUp.ForeColor = Color.Blue;
+            lblGoToSignUp.Font = new Font(lblGoToSignUp.Font, FontStyle.Underline);
+
 
         }
 

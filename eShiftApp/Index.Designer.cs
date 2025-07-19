@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 16);
+            this.label1.Location = new System.Drawing.Point(284, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(470, 46);
             this.label1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(135, 61);
+            this.label2.Location = new System.Drawing.Point(260, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(514, 22);
             this.label2.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 137);
+            this.label3.Location = new System.Drawing.Point(164, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(709, 37);
             this.label3.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 197);
+            this.label4.Location = new System.Drawing.Point(167, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(606, 40);
             this.label4.TabIndex = 3;
@@ -81,15 +81,15 @@
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(75, 101);
+            this.guna2Separator1.Location = new System.Drawing.Point(28, 122);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(620, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(927, 10);
             this.guna2Separator1.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 254);
+            this.label5.Location = new System.Drawing.Point(167, 347);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(586, 40);
             this.label5.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(76, 309);
+            this.label6.Location = new System.Drawing.Point(201, 433);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(250, 60);
             this.label6.TabIndex = 6;
@@ -109,11 +109,12 @@
             // lblGoToSignUp
             // 
             this.lblGoToSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.lblGoToSignUp.Location = new System.Drawing.Point(46, 383);
+            this.lblGoToSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoToSignUp.Location = new System.Drawing.Point(614, 517);
             this.lblGoToSignUp.Name = "lblGoToSignUp";
-            this.lblGoToSignUp.Size = new System.Drawing.Size(203, 22);
+            this.lblGoToSignUp.Size = new System.Drawing.Size(294, 28);
             this.lblGoToSignUp.TabIndex = 7;
-            this.lblGoToSignUp.Text = "🟢 Sign up to use our service!";
+            this.lblGoToSignUp.Text = " Sign up to use our service !";
             this.lblGoToSignUp.Click += new System.EventHandler(this.lblGoToSignUp_Click);
             // 
             // btnAdminLogin
@@ -125,7 +126,7 @@
             this.btnAdminLogin.FillColor = System.Drawing.Color.Black;
             this.btnAdminLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdminLogin.ForeColor = System.Drawing.Color.White;
-            this.btnAdminLogin.Location = new System.Drawing.Point(735, 12);
+            this.btnAdminLogin.Location = new System.Drawing.Point(973, 12);
             this.btnAdminLogin.Name = "btnAdminLogin";
             this.btnAdminLogin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnAdminLogin.Size = new System.Drawing.Size(53, 50);
@@ -138,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1038, 657);
             this.Controls.Add(this.btnAdminLogin);
             this.Controls.Add(this.lblGoToSignUp);
             this.Controls.Add(this.label6);

@@ -43,13 +43,11 @@ namespace eShiftApp.Views.Customer
                 lblMessage.Text = "Login successful!";
                 lblMessage.ForeColor = System.Drawing.Color.Green;
 
-                // TODO: Navigate to dashboard
                 MessageBox.Show($"Welcome, {customer.Name}!", "e-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Example: open customer dashboard
-                // var dashboard = new CustomerDashboardForm(customer);
-                // dashboard.Show();
-                // this.Hide();
+                var dashboard = new CustomerDashboardForm(customer);
+                dashboard.Show();
+                this.Hide();
             }
             else
             {

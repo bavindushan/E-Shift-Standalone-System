@@ -46,7 +46,7 @@
             this.guna2Panel1.Controls.Add(this.btnDashboard);
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(206, 516);
+            this.guna2Panel1.Size = new System.Drawing.Size(223, 606);
             this.guna2Panel1.TabIndex = 0;
             // 
             // btnLogout
@@ -58,9 +58,9 @@
             this.btnLogout.FillColor = System.Drawing.Color.Red;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(11, 461);
+            this.btnLogout.Location = new System.Drawing.Point(11, 554);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(92, 45);
+            this.btnLogout.Size = new System.Drawing.Size(113, 45);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             // 
@@ -75,7 +75,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Location = new System.Drawing.Point(13, 192);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(180, 45);
+            this.btnSettings.Size = new System.Drawing.Size(195, 45);
             this.btnSettings.TabIndex = 2;
             this.btnSettings.Text = "Settings";
             // 
@@ -90,7 +90,7 @@
             this.btnAddNewRequest.ForeColor = System.Drawing.Color.White;
             this.btnAddNewRequest.Location = new System.Drawing.Point(13, 107);
             this.btnAddNewRequest.Name = "btnAddNewRequest";
-            this.btnAddNewRequest.Size = new System.Drawing.Size(180, 45);
+            this.btnAddNewRequest.Size = new System.Drawing.Size(195, 45);
             this.btnAddNewRequest.TabIndex = 1;
             this.btnAddNewRequest.Text = "Add New Request";
             // 
@@ -105,22 +105,22 @@
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Location = new System.Drawing.Point(12, 28);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(180, 45);
+            this.btnDashboard.Size = new System.Drawing.Size(195, 45);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Text = "Dashboard";
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Location = new System.Drawing.Point(221, 12);
+            this.guna2Panel2.Location = new System.Drawing.Point(229, 5);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(768, 494);
+            this.guna2Panel2.Size = new System.Drawing.Size(887, 601);
             this.guna2Panel2.TabIndex = 1;
             // 
             // CustomerDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 516);
+            this.ClientSize = new System.Drawing.Size(1129, 613);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "CustomerDashboardForm";

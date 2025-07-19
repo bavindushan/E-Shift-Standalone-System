@@ -120,17 +120,24 @@ namespace eShiftApp.Views.Customer
             try
             {
                 var jobs = _jobController.GetJobsByCustomerId(_currentCustomer.CustomerId);
+                dataGridJobs.AutoGenerateColumns = true;
                 dataGridJobs.DataSource = jobs;
 
                 dataGridJobs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridJobs.ReadOnly = true;
                 dataGridJobs.AllowUserToAddRows = false;
                 dataGridJobs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dataGridJobs.ColumnHeadersVisible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading job list: " + ex.Message);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

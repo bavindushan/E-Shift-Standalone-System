@@ -15,6 +15,13 @@ namespace eShiftApp.Views.Customer
         {
             InitializeComponent();
             _currentCustomer = customer;
+
+            LoadDashboardControl();
+
+            btnDashboard.Click += btnDashboard_Click;
+            btnAddNewRequest.Click += btnAddNewRequest_Click;
+            btnSettings.Click += btnSettings_Click;
+            btnLogout.Click += btnLogout_Click;
         }
 
         private void CustomerDashboardForm_Load(object sender, EventArgs e)

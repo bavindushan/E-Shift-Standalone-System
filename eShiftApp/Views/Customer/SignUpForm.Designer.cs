@@ -38,6 +38,7 @@
             this.lblStatus = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.lblLoginLink = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.linkLogin = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -169,8 +170,9 @@
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Location = new System.Drawing.Point(423, 345);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(3, 2);
+            this.lblStatus.Size = new System.Drawing.Size(0, 0);
             this.lblStatus.TabIndex = 7;
+            this.lblStatus.Text = null;
             // 
             // btnRegister
             // 
@@ -192,8 +194,20 @@
             this.lblLoginLink.BackColor = System.Drawing.Color.Transparent;
             this.lblLoginLink.Location = new System.Drawing.Point(95, 302);
             this.lblLoginLink.Name = "lblLoginLink";
-            this.lblLoginLink.Size = new System.Drawing.Size(3, 2);
+            this.lblLoginLink.Size = new System.Drawing.Size(0, 0);
             this.lblLoginLink.TabIndex = 9;
+            this.lblLoginLink.Text = null;
+            // 
+            // linkLogin
+            // 
+            this.linkLogin.AutoSize = true;
+            this.linkLogin.Location = new System.Drawing.Point(95, 373);
+            this.linkLogin.Name = "linkLogin";
+            this.linkLogin.Size = new System.Drawing.Size(275, 20);
+            this.linkLogin.TabIndex = 10;
+            this.linkLogin.TabStop = true;
+            this.linkLogin.Text = "Already have an account? Log in here";
+            this.linkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
             // 
             // SignUpForm
             // 
@@ -201,6 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.linkLogin);
             this.Controls.Add(this.lblLoginLink);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lblStatus);
@@ -230,5 +245,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatus;
         private Guna.UI2.WinForms.Guna2Button btnRegister;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLoginLink;
+        private System.Windows.Forms.LinkLabel linkLogin;
     }
 }
