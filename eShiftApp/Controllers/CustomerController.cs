@@ -32,6 +32,7 @@ namespace eShiftApp.Controllers
             return customers;
         }
 
+        // Get by id
         public Customer GetCustomerById(int customerId)
         {
             string query = "SELECT * FROM Customer WHERE customer_id = @CustomerId";

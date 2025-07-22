@@ -51,7 +51,7 @@ namespace eShiftApp.Controllers
             return loads;
         }
 
-        // Optional: Delete a load
+        // Delete a load
         public int DeleteLoad(int loadId)
         {
             string query = "DELETE FROM Load WHERE load_id = @LoadId";
@@ -62,7 +62,7 @@ namespace eShiftApp.Controllers
             return DBHelper.ExecuteQuery(query, parameters);
         }
 
-        // Optional: Update load details
+        // Update load details
         public int UpdateLoad(Load load)
         {
             string query = "UPDATE Load SET product_id = @ProductId, weight = @Weight, volume = @Volume " +

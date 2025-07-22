@@ -54,7 +54,7 @@ namespace eShiftApp.Controllers
             return -1;
         }
 
-        // Admin: Get all jobs
+        // Admin Get all jobs
         public List<TransportJob> GetAllJobs()
         {
             string query = "SELECT * FROM TransportJob";
@@ -70,7 +70,7 @@ namespace eShiftApp.Controllers
             return ParseJobList(dt);
         }
 
-        // Admin: Update job status (Approve/Decline)
+        // Admin Update job status (Approve/Decline)
         public int UpdateJobStatus(int jobId, string status, DateTime? approvalDate)
         {
             string query = "UPDATE TransportJob SET status = @Status, approval_date = @ApprovalDate WHERE job_id = @JobId";
@@ -84,7 +84,7 @@ namespace eShiftApp.Controllers
             return DBHelper.ExecuteQuery(query, parameters);
         }
 
-        // Admin: Assign transport unit to a job
+        // Admin Assign transport unit to a job
         public int AssignUnitToJob(int jobId, int unitId)
         {
             string query = "UPDATE TransportJob SET unit_id = @UnitId WHERE job_id = @JobId";
@@ -158,7 +158,7 @@ namespace eShiftApp.Controllers
             return Convert.ToInt32(result);
         }
 
-        //  Count jobs with status = Completed (if used in DB)
+        //  Count jobs with status = Completed 
         public int GetCompletedJobCount(int customerId)
         {
             string query = "SELECT COUNT(*) FROM TransportJob WHERE customer_id = @CustomerId AND status = 'Completed'";
@@ -220,9 +220,7 @@ namespace eShiftApp.Controllers
             return false;
         }
 
-
-
-        // Helper: Convert DataTable to List<TransportJob> // use this method as ORM
+        //  Convert DataTable to List<TransportJob> // use this method as ORM
         private List<TransportJob> ParseJobList(DataTable dt)
         {
             List<TransportJob> jobs = new List<TransportJob>();

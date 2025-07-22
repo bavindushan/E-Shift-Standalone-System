@@ -35,7 +35,8 @@ namespace eShiftApp.Views.Admin
 
             if (string.IsNullOrEmpty(newUsername) || newUsername != confirmUsername)
             {
-                MessageBox.Show("New username and confirm username must match and not be empty!", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("New username and confirm username must match and not be empty!", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -68,7 +69,8 @@ namespace eShiftApp.Views.Admin
 
             if (string.IsNullOrEmpty(newPassword) || newPassword != confirmPassword)
             {
-                MessageBox.Show("New password and confirm password must match and not be empty!", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("New password and confirm password must match and not be empty!", "Validation", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

@@ -59,7 +59,7 @@ namespace eShiftApp.Controllers
             return DBHelper.ExecuteQuery(query, parameters);
         }
 
-        // Get all admins (useful for listing or report generation)
+        // Get all admins 
         public List<Admin> GetAllAdmins()
         {
             List<Admin> admins = new List<Admin>();

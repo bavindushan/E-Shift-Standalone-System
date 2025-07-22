@@ -68,7 +68,7 @@ namespace eShiftApp.Utils
             }
         }
 
-        // Optional: Execute scalar query (e.g., SELECT COUNT(*))
+        // Execute scalar query 
         public static object ExecuteScalar(string query, SqlParameter[] parameters = null)
         {
             using (SqlConnection con = GetConnection())
