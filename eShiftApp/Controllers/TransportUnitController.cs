@@ -123,5 +123,35 @@ namespace eShiftApp.Controllers
 
             return units;
         }
+
+        //get by id
+        public TransportUnit GetUnitById(int unitId)
+        {
+            string query = "SELECT * FROM TransportUnit WHERE unit_id = @UnitId";
+
+            SqlParameter[] parameters = {
+            new SqlParameter("@UnitId", unitId)
+        };
+
+            DataTable dt = DBHelper.ExecuteSelect(query, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+
+                return new TransportUnit
+                {
+                    UnitId = (int)row["unit_id"],
+                    LorryNumber = row["lorry_number"].ToString(),
+                    DriverName = row["driver_name"].ToString(),
+                    AssistantName = row["assistant_name"].ToString(),
+                    ContainerCapacity = Convert.ToSingle(row["container_capacity"]),
+                    IsBooked = Convert.ToBoolean(row["is_booked"])
+                };
+            }
+
+            return null;
+        }
+
     }
 }

@@ -38,5 +38,10 @@ namespace eShiftApp
             signUpForm.Show();
             this.Hide();
         }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

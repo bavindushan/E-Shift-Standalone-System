@@ -77,5 +77,24 @@ namespace eShiftApp.Controllers
 
             return DBHelper.ExecuteQuery(query, parameters);
         }
+
+        public (float totalWeight, float totalVolume) GetTotalLoadByJobId(int jobId)
+        {
+            string query = "SELECT SUM(weight) AS TotalWeight, SUM(volume) AS TotalVolume FROM Load WHERE job_id = @JobId";
+            SqlParameter[] parameters = {
+            new SqlParameter("@JobId", jobId)
+        };
+
+            DataTable dt = DBHelper.ExecuteSelect(query, parameters);
+            if (dt.Rows.Count > 0)
+            {
+                float totalWeight = dt.Rows[0]["TotalWeight"] != DBNull.Value ? Convert.ToSingle(dt.Rows[0]["TotalWeight"]) : 0;
+                float totalVolume = dt.Rows[0]["TotalVolume"] != DBNull.Value ? Convert.ToSingle(dt.Rows[0]["TotalVolume"]) : 0;
+                return (totalWeight, totalVolume);
+            }
+
+            return (0, 0);
+        }
+
     }
 }

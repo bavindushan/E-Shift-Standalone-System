@@ -21,6 +21,7 @@ namespace eShiftApp.Views.Admin
         private readonly AdminModel _adminModel;
         private readonly AdminDashboardForm _adminDashboardForm;
         private readonly TransportUnitController _unitController;
+        private readonly LoadController _loadController;
 
         private int _targetTotal = 0;
         private int _targetOngoing = 0;
@@ -39,6 +40,7 @@ namespace eShiftApp.Views.Admin
             _adminModel = admin;
             _adminDashboardForm = adminDashboardForm;
             _unitController = new TransportUnitController();
+            _loadController = new LoadController();
             LoadUnitIds();
             LoadStatusOptions();
 
@@ -147,7 +149,6 @@ namespace eShiftApp.Views.Admin
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Validate job id
             if (!int.TryParse(txtJobId.Text.Trim(), out int jobId))
             {
                 MessageBox.Show("Please enter a valid Job ID.");
@@ -157,58 +158,83 @@ namespace eShiftApp.Views.Admin
             string statusInput = cmbStatus.Text.Trim().ToLower();
             string unitIdText = cmbUnitId.Text.Trim();
 
-            // Handle Decline status
             if (statusInput == "declined")
             {
-                int result = _jobController.UpdateJobStatus(jobId, "Declined", DateTime.Now);
-                if (result > 0)
-                {
-                    MessageBox.Show($"Job #{jobId} status updated to Declined.");
-                    LoadJobTable(); 
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update job status.");
-                }
+                HandleDeclineStatus(jobId);
                 return;
             }
 
-            // Handle Approve with Unit assignment
-            if (statusInput == "approved" || !string.IsNullOrEmpty(unitIdText))
+            if (statusInput == "approved" && !string.IsNullOrEmpty(unitIdText))
             {
-                if (!int.TryParse(unitIdText, out int unitId))
-                {
-                    MessageBox.Show("Please enter a valid Unit ID.");
-                    return;
-                }
-
-                // Assign unit
-                int assignResult = _jobController.AssignUnitToJob(jobId, unitId);
-
-                if (assignResult > 0)
-                {
-                    // Update status to Approved and set approval date
-                    int statusResult = _jobController.UpdateJobStatus(jobId, "Approved", DateTime.Now);
-
-                    if (statusResult > 0)
-                    {
-                        MessageBox.Show($"Job #{jobId} assigned to Unit #{unitId} and status set to Approved.");
-                        LoadJobTable(); 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to update job status after assigning unit.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to assign unit to job.");
-                }
-
+                HandleApproveStatus(jobId, unitIdText);
                 return;
             }
 
-            MessageBox.Show("Invalid status. Please enter 'Declined' or assign a Unit ID to approve.");
+            MessageBox.Show("Invalid action. To approve, select a unit. To decline, choose 'Declined'.");
+        }
+
+        private void HandleDeclineStatus(int jobId)
+        {
+            int result = _jobController.UpdateJobStatus(jobId, "Declined", DateTime.Now);
+            if (result > 0)
+            {
+                MessageBox.Show($"Job #{jobId} status updated to Declined.");
+                LoadJobTable();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update job status.");
+            }
+        }
+
+        private void HandleApproveStatus(int jobId, string unitIdText)
+        {
+            if (!int.TryParse(unitIdText, out int unitId))
+            {
+                MessageBox.Show("Please enter a valid Unit ID.");
+                return;
+            }
+
+            var job = _jobController.GetJobById(jobId);
+            var unit = _unitController.GetUnitById(unitId);
+            var loads = _loadController.GetLoadsByJobId(jobId);
+
+            if (job == null || unit == null || loads == null || loads.Count == 0)
+            {
+                MessageBox.Show("Failed to retrieve job, unit, or load data.");
+                return;
+            }
+
+            float totalWeight = loads.Sum(l => l.Weight);
+            float totalVolume = loads.Sum(l => l.Volume);
+            float combinedLoad = totalWeight + totalVolume;
+
+            if (combinedLoad > unit.ContainerCapacity)
+            {
+                MessageBox.Show($"Combined job load exceeds unit capacity:\n" +
+                                $"Total Weight: {totalWeight} kg\n" +
+                                $"Total Volume: {totalVolume} m³\n" +
+                                $"Combined: {combinedLoad} / Capacity: {unit.ContainerCapacity}");
+                return;
+            }
+
+            int assignResult = _jobController.AssignUnitToJob(jobId, unitId);
+            if (assignResult <= 0)
+            {
+                MessageBox.Show("Failed to assign unit to job.");
+                return;
+            }
+
+            int statusResult = _jobController.UpdateJobStatus(jobId, "Approved", DateTime.Now);
+            if (statusResult > 0)
+            {
+                MessageBox.Show($"Job #{jobId} assigned to Unit #{unitId} and status set to Approved.");
+                LoadJobTable();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update job status after assigning unit.");
+            }
         }
 
         private void LoadUnitIds()

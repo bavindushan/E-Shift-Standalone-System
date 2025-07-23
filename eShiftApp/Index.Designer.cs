@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(164, 185);
+            this.label3.Location = new System.Drawing.Point(143, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(709, 37);
             this.label3.TabIndex = 2;
@@ -72,12 +73,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(167, 275);
+            this.label4.Location = new System.Drawing.Point(24, 305);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(606, 40);
+            this.label4.Size = new System.Drawing.Size(329, 60);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Welcome to eShift, a modern transport service dedicated to delivering fast, safe," +
-    " and \r\nreliable logistics solutions across Sri Lanka.";
+            this.label4.Text = "Welcome to eShift, a modern transport \r\nservice dedicated to delivering fast, saf" +
+    "e, and \r\nreliable logistics solutions across Sri Lanka.";
             // 
             // guna2Separator1
             // 
@@ -89,18 +90,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(167, 347);
+            this.label5.Location = new System.Drawing.Point(24, 403);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(586, 40);
+            this.label5.Size = new System.Drawing.Size(340, 60);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Whether you\'re moving goods locally or across districts, our platform connects yo" +
-    "u \r\nwith professional transport units ready to serve.";
+            this.label5.Text = "Whether you\'re moving goods locally \r\nor across districts, our platform connects " +
+    "you \r\nwith professional transport units ready to serve.";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(201, 433);
+            this.label6.Location = new System.Drawing.Point(24, 485);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(250, 60);
             this.label6.TabIndex = 6;
@@ -110,7 +111,7 @@
             // 
             this.lblGoToSignUp.BackColor = System.Drawing.Color.Transparent;
             this.lblGoToSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGoToSignUp.Location = new System.Drawing.Point(614, 517);
+            this.lblGoToSignUp.Location = new System.Drawing.Point(28, 560);
             this.lblGoToSignUp.Name = "lblGoToSignUp";
             this.lblGoToSignUp.Size = new System.Drawing.Size(294, 28);
             this.lblGoToSignUp.TabIndex = 7;
@@ -139,6 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1038, 657);
             this.Controls.Add(this.btnAdminLogin);
             this.Controls.Add(this.lblGoToSignUp);
@@ -151,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Index";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Index_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
