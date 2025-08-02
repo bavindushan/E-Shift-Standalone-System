@@ -36,6 +36,11 @@
             this.txtDeliveryLocation = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPickupLocation = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtVolume
@@ -109,7 +114,7 @@
             this.btnSubmitRequest.FillColor = System.Drawing.Color.Green;
             this.btnSubmitRequest.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSubmitRequest.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitRequest.Location = new System.Drawing.Point(428, 490);
+            this.btnSubmitRequest.Location = new System.Drawing.Point(428, 484);
             this.btnSubmitRequest.Name = "btnSubmitRequest";
             this.btnSubmitRequest.Size = new System.Drawing.Size(180, 45);
             this.btnSubmitRequest.TabIndex = 9;
@@ -164,10 +169,60 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Add New Job Here !";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(116, 149);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Pickup Location :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(108, 218);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 20);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Delivery Location :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(139, 283);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Product type :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(178, 350);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Weight :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(174, 420);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 20);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Volume :";
+            // 
             // AddJobControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtVolume);
             this.Controls.Add(this.txtWeight);
@@ -194,5 +249,10 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDeliveryLocation;
         private Guna.UI2.WinForms.Guna2TextBox txtPickupLocation;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

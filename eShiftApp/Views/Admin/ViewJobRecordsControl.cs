@@ -78,9 +78,9 @@ namespace eShiftApp.Views.Admin
                     }
 
 
-                    // DEBUG: Print all column names
-                    string columns = string.Join(", ", jobData.Columns.Cast<DataColumn>().Select(c => c.ColumnName));
-                    MessageBox.Show("Loaded columns: " + columns, "Debug");
+                    // Print all column names
+                    //string columns = string.Join(", ", jobData.Columns.Cast<DataColumn>().Select(c => c.ColumnName));
+                    //MessageBox.Show("Loaded columns: " + columns, "Debug");
                 }
                 else
                 {

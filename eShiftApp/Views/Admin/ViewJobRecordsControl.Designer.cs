@@ -94,7 +94,8 @@
             this.btnSearchJob.Size = new System.Drawing.Size(118, 37);
             this.btnSearchJob.TabIndex = 52;
             this.btnSearchJob.Text = "Search";
-            this.btnSearchJob.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnSearchJob.Click += new System.EventHandler(this.btnSearchJob_Click);
+
             // 
             // btnMarkAsComplete
             // 
